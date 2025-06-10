@@ -12,7 +12,7 @@ docker-compose up -d
 docker-compose ps
 ```
 
-Status が 4 つ RUNNING になってれば OK
+Status が 3つ RUNNING になってれば OK
 
 ホスト設定
 
@@ -37,5 +37,6 @@ echo "127.0.0.1 www.fuga.test" | sudo tee -a /etc/hosts
 
 - phpmyadmin / http://localhost:8080/
 - mailCather / http://localhost:1080/
+    - `docker compose up mailcatcher` で起動が必要
 - XDebug
 
