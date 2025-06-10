@@ -1,0 +1,11 @@
+*:Zone.Identifier
+.DS_Store
+.git.bak
+
+html/**/
+!html/www.hoge.test/
+!html/www.fuga.test/
+
+base.conf
+
+!.gitkeep

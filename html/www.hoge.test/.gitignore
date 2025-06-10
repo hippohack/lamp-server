@@ -1,0 +1,9 @@
+*/wp-admin
+*/wp-includes
+node_modules
+
+*/wp-content/ai1wm-backups
+*/wp-content/themes/twenty*
+*/wp-*php
+
+!*/wp-config.php

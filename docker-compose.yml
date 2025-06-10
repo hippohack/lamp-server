@@ -1,0 +1,43 @@
+services:
+  web:
+    build: ./docker/web
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/var/www/html
+    depends_on:
+      - mysql
+    environment:
+      PHP_EXTENSION_XDEBUG: 1
+  mysql:
+    build: ./docker/db
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: default
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
+    volumes:
+      - ./phpmyadmin/uploads.ini:/usr/local/etc/php/conf.d/phpmyadmin-misc.ini
+      - /sessions
+  mailcatcher:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+    profiles:
+      - tools
+volumes:
+  db-data:
