@@ -27,9 +27,9 @@ echo "127.0.0.1 www.fuga.test" | sudo tee -a /etc/hosts
 
 ## WordPressを設置する場合
 
-/html/www.hoge.test/html/public が公開ディレクトリとなるので、ここに WP を設置します。
+`/html/www.hoge.test/html/public` が公開ディレクトリとなるので、ここに WP を設置します。
 
-/html/www.fuga.test/html/public も同様です。
+`/html/www.fuga.test/html/public` も同様です。
 
 設置後、ブラウザで http://www.hoge.test にアクセスすると WP が開く
 

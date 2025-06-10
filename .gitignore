@@ -2,7 +2,8 @@
 .DS_Store
 .git.bak
 
-html/**/
+# サイトを追加する場合は適宜編集してください
+html/www.*
 !html/www.hoge.test/
 !html/www.fuga.test/
 
